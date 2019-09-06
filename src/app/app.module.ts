@@ -17,8 +17,12 @@ const rutas:Routes = [
   {path:'',component:LoginComponent},
   {path:'tareas', component:MenulateralComponent, children:[
     {path:'',component:ListadoComponent},
+    /* {path:'todo', component:ListadoComponent},
+    {path:'doing', component:ListadoComponent},
+    {path:'complete', component:ListadoComponent}, */
     {path:'nueva',component:NuevaComponent},
-    {path:'editar',component:EditarComponent}
+    {path:'editar',component:EditarComponent},
+    {path:':status',component:ListadoComponent},
   ]},
   {path:'**',component:NologueadoComponent}
 ]

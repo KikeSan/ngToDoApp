@@ -1,14 +1,17 @@
 .row-listado{
   padding: 25px;
+  background-color: whitesmoke;
 }
 .card{
   padding-left: 7px;
   padding-right: 7px;
   border: 0;
   margin-bottom: 15px;
+  background-color: transparent;
 }
 .card-body{
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
+  background-color: #fff;
   border-radius: 5px;
 }

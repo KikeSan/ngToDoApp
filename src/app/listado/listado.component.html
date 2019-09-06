@@ -1,9 +1,19 @@
 <div class="row row-listado">
   <div class="card col-3" *ngFor="let tarea of tareas">
     <div class="card-body">
-      <h5 class="card-title">{{tarea.title}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{tarea.status}}</h6>
-      <p class="card-text">{{tarea.description}}</p>
+      <h5 class="card-title">{{ tarea.title }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ tarea.status }}</h6>
+      <p class="card-text">{{ tarea.description }}</p>
     </div>
+  </div>
+  <div class="card col-3">
+    <div class="card-body">
+      <h5 class="card-title">Crear nueva tarea</h5>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+      <p class="card-text"></p>
+    </div>
+  </div>
+  <div class="col-12 text-center">
+    <a routerLink="/tareas/nueva" class="btn btn-primary">Crear nueva tarea</a>
   </div>
 </div>

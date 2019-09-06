@@ -1,1 +1,32 @@
-<p>nueva works!</p>
+<form [formGroup]="grupo" (ngSubmit)="newTask()">
+  <h1 class="title is-4">Editar tarea</h1>
+  <div class="field selectOpc">
+    <div class="control">
+      <div class="select is-info">
+        <select class="form-control" formControlName="status">
+          <option [ngValue]="type" *ngFor="let type of types" [value]="type">{{type}}</option>
+          <!-- <option>Todo</option>
+              <option>Doing</option>
+              <option>Complete</option> -->
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label">Titulo</label>
+    <p class="control has-icons-left">
+      <input class="input is-small" type="text" placeholder="Ingresar tarea nueva" formControlName="title" />
+      <fa-icon [icon]="faFile" size="md" class="icon is-small is-left"></fa-icon>
+    </p>
+  </div>
+  <div class="field">
+    <label class="label">Descripción</label>
+    <p class="control has-icons-left">
+      <input class="input is-small" type="text" placeholder="Ingresar descripción" formControlName="description" />
+      <fa-icon [icon]="faAlignLeft" size="md" class="icon is-small is-left"></fa-icon>
+    </p>
+  </div>
+  <div class="field">
+    <button class="button is-link is-small" >Crear Tarea</button>
+  </div>
+</form>
