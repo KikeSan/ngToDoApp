@@ -1,0 +1,24 @@
+.wrapper-login {
+  margin: 0;
+  height: 100vh;
+  .wrapper-form {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 5px;
+    h2{
+      margin: 15px 0 30px;
+    }
+    .form-group{
+      position: relative
+    }
+    input{
+      padding-left: 36px;
+    }
+    .icon{
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      opacity: .5;
+    }
+  }
+}

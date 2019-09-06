@@ -1,0 +1,9 @@
+<div class="row row-listado">
+  <div class="card col-3" *ngFor="let tarea of tareas">
+    <div class="card-body">
+      <h5 class="card-title">{{tarea.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{tarea.status}}</h6>
+      <p class="card-text">{{tarea.description}}</p>
+    </div>
+  </div>
+</div>
