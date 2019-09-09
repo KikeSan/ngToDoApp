@@ -1,32 +1,48 @@
-<form [formGroup]="grupo" (ngSubmit)="newTask()">
-  <h1 class="title is-4">Editar tarea</h1>
-  <div class="field selectOpc">
-    <div class="control">
-      <div class="select is-info">
-        <select class="form-control" formControlName="status">
-          <option [ngValue]="type" *ngFor="let type of types" [value]="type">{{type}}</option>
-          <!-- <option>Todo</option>
-              <option>Doing</option>
-              <option>Complete</option> -->
-        </select>
+<div class="row justify-content-center wrapper-login align-items-center nuevo-wrapper">
+  <form class="col-5 wrapper-form" [formGroup]="grupo" (ngSubmit)="newTask()">
+    <h3 class="text-center">Crear tarea nueva</h3>
+    
+    <div class="form-group">
+      <label class="label">Titulo</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Ingresar título "
+        formControlName="title"
+      />
+    </div>
+    <div class="form-group">
+      <label class="label">Descripción</label>
+        <textarea
+          class="form-control input is-small"
+          type="text"
+          placeholder="Ingresar descripción"
+          formControlName="description"
+        ></textarea>
+    </div>
+
+    <div class="form-group">
+      <div class="control">
+        <div class="select is-info">
+          <label class="label">Seleccionar estado</label>
+          <select class="form-control" formControlName="status">
+            <option [ngValue]="type" *ngFor="let type of types" [value]="type">{{ type }}</option>
+            <!-- <option>Todo</option>
+                  <option>Doing</option>
+                  <option>Complete</option> -->
+          </select>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="field">
-    <label class="label">Titulo</label>
-    <p class="control has-icons-left">
-      <input class="input is-small" type="text" placeholder="Ingresar tarea nueva" formControlName="title" />
-      <fa-icon [icon]="faFile" size="md" class="icon is-small is-left"></fa-icon>
-    </p>
-  </div>
-  <div class="field">
-    <label class="label">Descripción</label>
-    <p class="control has-icons-left">
-      <input class="input is-small" type="text" placeholder="Ingresar descripción" formControlName="description" />
-      <fa-icon [icon]="faAlignLeft" size="md" class="icon is-small is-left"></fa-icon>
-    </p>
-  </div>
-  <div class="field">
-    <button class="button is-link is-small" >Crear Tarea</button>
-  </div>
-</form>
+    <div class="d-flex justify-content-between">
+      <button
+        type="button"
+        class="btn btn-outline-secondary is-small"
+        (click)="volver()"
+      >
+        Cancelar
+      </button>
+      <button class="btn btn-primary is-small">Crear Tarea</button>
+    </div>
+  </form>
+</div>

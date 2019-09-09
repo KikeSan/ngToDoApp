@@ -1,7 +1,7 @@
 <div class="row wrapper-nav">
   <nav class="navbar col-12 navbar-light navbar-expand-lg row">
     <a class="navbar-brand col-2" href="#">Navbar</a>
-    <button
+    <!-- <button
       class="navbar-toggler"
       type="button"
       data-toggle="collapse"
@@ -11,9 +11,12 @@
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div
+      class="col-10 d-flex justify-content-between"
+      id="navbarSupportedContent"
+    >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#"
@@ -24,6 +27,30 @@
           <a class="nav-link" href="#">Link</a>
         </li>
       </ul>
+      <form
+        class="form-inline my-2 my-lg-0"
+        [formGroup]="busqueda"
+        (ngSubmit)="buscar()"
+      >
+        <div class="input-group input-group-sm">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Buscar tarea"
+          />
+        </div>
+        <button
+          class="btn btn-sm btn-outline-primary my-2 my-sm-0"
+          type="submit"
+        >
+          Buscar
+        </button>
+      </form>
+      <div class="user">
+        <span class="icon is-small is-left">
+          <fa-icon [icon]="faUserCircle"></fa-icon>
+        </span>
+      </div>
     </div>
   </nav>
 </div>
@@ -49,7 +76,15 @@
       </ul>
     </div>
   </nav>
-  <div class="col-10">
+  <div class="col-10 body-main">
     <router-outlet></router-outlet>
+  </div>
+</div>
+<div class="row credits">
+  <div class="col-12">
+    <span>
+      KIKE SÁNCHEZ © 2019 <br />
+      v1.0.0
+    </span>
   </div>
 </div>

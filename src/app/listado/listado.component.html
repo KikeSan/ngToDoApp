@@ -1,8 +1,18 @@
+<div class="row row-header">
+  <div class="col-9">
+    <h3>Lista de tareas</h3>
+  </div>
+  <div class="col-3 text-right">
+    <a routerLink="/tareas/nueva" class="btn btn-primary"
+      >Crear nueva tarea</a
+    >
+  </div>
+</div>
 <div class="row row-listado">
   <div *ngFor="let tarea of tareas" class="card col-3">
-    <div class="card-body card-{{tarea.status}}">
-      <h5 class="card-title">{{ tarea.title }}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{ tarea.status }}</h6>
+    <div class="card-body card-{{ tarea.status }}">
+      <p class="card-title">{{ tarea.title }}</p>
+      <span class="badge badge-{{tarea.status}}">{{ tarea.status }}</span>
       <p class="card-text">{{ tarea.description }}</p>
       <div class="menu">
         <a class="menu--item menu--editar" (click)="editarTarea(tarea.id)">
@@ -13,8 +23,5 @@
         </a>
       </div>
     </div>
-  </div>
-  <div class="col-12 text-center">
-    <a routerLink="/tareas/nueva" class="btn btn-primary">Crear nueva tarea</a>
   </div>
 </div>

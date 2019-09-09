@@ -36,4 +36,8 @@ export class NuevaComponent implements OnInit {
     })
   }
 
+  volver() {
+    this.router.navigate(["/tareas"])
+  }
+
 }
