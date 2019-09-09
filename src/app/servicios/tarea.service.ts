@@ -28,6 +28,10 @@ export class TareaService {
     )
   }
   insertar(tarea:Tarea):Observable<any>{
-    return this.http.post('http://localhost:8001/tareas',tarea)
+    return this.http.post(`http://localhost:8001/tareas?title=${tarea.title}&description=${tarea.description}&status=${tarea.status}`,tarea)
+  }
+
+  eliminar(tarea:Tarea):Observable<any>{
+    return this.http.delete(`http://localhost:8001/tareas/${tarea.id}`)
   }
 }

@@ -1,16 +1,17 @@
 <div class="row row-listado">
-  <div class="card col-3" *ngFor="let tarea of tareas">
-    <div class="card-body">
+  <div *ngFor="let tarea of tareas" class="card col-3">
+    <div class="card-body card-{{tarea.status}}">
       <h5 class="card-title">{{ tarea.title }}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{ tarea.status }}</h6>
       <p class="card-text">{{ tarea.description }}</p>
-    </div>
-  </div>
-  <div class="card col-3">
-    <div class="card-body">
-      <h5 class="card-title">Crear nueva tarea</h5>
-      <h6 class="card-subtitle mb-2 text-muted"></h6>
-      <p class="card-text"></p>
+      <div class="menu">
+        <a class="menu--item menu--editar" (click)="editarTarea(tarea.id)">
+          <fa-icon [icon]="faEdit"></fa-icon>
+        </a>
+        <a class="menu--item menu--eliminar" (click)="eliminarTarea(tarea)">
+          <fa-icon [icon]="faTrashAlt"></fa-icon>
+        </a>
+      </div>
     </div>
   </div>
   <div class="col-12 text-center">

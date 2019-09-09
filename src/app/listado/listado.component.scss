@@ -1,17 +1,65 @@
-.row-listado{
+$azul:#007bff;
+$rojo:#dc3545;
+$gris:#fff;
+
+$todo: #17a2b8;
+$doing: #ffc107;
+$complete: #28a745;
+
+.row-listado {
   padding: 25px;
   background-color: whitesmoke;
 }
-.card{
+.card {
   padding-left: 7px;
   padding-right: 7px;
   border: 0;
   margin-bottom: 15px;
   background-color: transparent;
 }
-.card-body{
+.card-body {
   padding: 1rem;
   border: 1px solid #ddd;
   background-color: #fff;
   border-radius: 5px;
+  &:hover{
+    &.card-todo{
+      border: 1px solid $todo;
+    }
+    &.card-doing{
+      border: 1px solid $doing;
+    }
+    &.card-complete{
+      border: 1px solid $complete;
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  top: -2px;
+  right: 8px;
+}
+.menu--item {
+  font-size: 12px;
+  width: 21px;
+  height: 20px;
+  display: inline-block;
+  padding: 1px 5px;
+  cursor: pointer;
+  fa-icon {
+    color: #bbb;
+  }
+  &:hover {
+    background-color: #007bff;
+    fa-icon {
+      color: #fff;
+    }
+  }
+}
+.menu--eliminar{
+  border-top-right-radius: 4px;
+  &:hover{
+    background-color: #dc3545;
+  }
 }

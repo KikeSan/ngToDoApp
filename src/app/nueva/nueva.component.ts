@@ -32,7 +32,7 @@ export class NuevaComponent implements OnInit {
     .subscribe(()=>{
       this.tareaService.onActualizar.next()
       this.router.navigate(['/tareas'])
-      alert('Tarea Creada con éxito!')
+      //alert('Tarea Creada con éxito!')
     })
   }
 
