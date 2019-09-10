@@ -2,7 +2,7 @@
   background: #fff;
   margin: 30px 30px 0;
   border-radius: 5px 5px 0 0;
-  overflow: hidden;
+  //overflow: hidden;
   box-shadow: 5px 12px 10px -5px #0555a5;
   form {
     input {
@@ -40,13 +40,25 @@
 .form-inline {
   padding: 10px 0;
 }
-.user > .icon {
-  display: block;
-  font-size: 26px;
-  padding: 7px 4px 0 14px;
+.user {
+  padding: 0;
+  .dropdown-toggle {
+    .icon {
+      display: block;
+      font-size: 26px;
+      padding: 7px 4px 0 14px;
+    }
+    &:after {
+      position: absolute;
+      right: 7px;
+      top: 24px;
+    }
+  }
 }
 .sidebar {
+  //background: url('../../assets/images/bg1.png') #052586;
   background: #052586;
+  background-size: cover;
   color: #fff;
   padding: 0;
   .menu-lateral {
@@ -83,7 +95,7 @@
   position: relative;
   .developAngular {
     position: absolute;
-    right: 17px;
+    right: 20px;
     top: 0;
     font-size: 13px;
   }
