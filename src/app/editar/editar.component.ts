@@ -9,7 +9,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./editar.component.scss']
 })
 export class EditarComponent implements OnInit {
-  id:string
+  id: string
+  types: string[] = ['todo', 'doing', 'complete']
   grupo:FormGroup
   constructor(private tareaService:TareaService, private router:Router, private activateRoute:ActivatedRoute) { }
 
@@ -38,13 +39,13 @@ export class EditarComponent implements OnInit {
     this.tareaService.modificar(this.grupo.getRawValue())
     .subscribe(resp=>{
       this.tareaService.onActualizar.next()
-      this.router.navigate(["/"])
+      this.router.navigate(["/tareas"])
       alert("Tarea Actualizado!")
     })
   }
 
   volver(){
-    this.router.navigate(["/"])
+    this.router.navigate(["/tareas"])
   }
 
 }

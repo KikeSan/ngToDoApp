@@ -9,11 +9,9 @@
   </div>
 </div>
 <div class="row row-listado">
-  <div *ngFor="let tarea of tareas" class="card col-3">
-    <div class="card-body card-{{ tarea.status }}">
-      <p class="card-title">{{ tarea.title }}</p>
+  <div *ngFor="let tarea of tareas" class="card col-3 card-{{ tarea.status }}">
+    <div class="card-header">
       <span class="badge badge-{{tarea.status}}">{{ tarea.status }}</span>
-      <p class="card-text">{{ tarea.description }}</p>
       <div class="menu">
         <a class="menu--item menu--editar" (click)="editarTarea(tarea.id)">
           <fa-icon [icon]="faEdit"></fa-icon>
@@ -22,6 +20,10 @@
           <fa-icon [icon]="faTrashAlt"></fa-icon>
         </a>
       </div>
+    </div>
+    <div class="card-body">
+      <p class="card-title">{{ tarea.title }}</p>
+      <p class="card-text">{{ tarea.description }}</p>
     </div>
   </div>
 </div>
