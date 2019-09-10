@@ -4,6 +4,20 @@
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 5px 12px 10px -5px #0555a5;
+  form {
+    input {
+      border-radius: 20px;
+    }
+    .btn-buscar {
+      border-radius: 50%;
+    }
+  }
+  .navbar ul.nav {
+    padding: 0;
+    a {
+      padding: 0.8rem 1rem;
+    }
+  }
 }
 .wrapper-all {
   background: #fff;
@@ -20,7 +34,7 @@
 .navbar-brand {
   padding: 0;
   margin: 0;
-  background: #060661;
+  background: #052586;
   height: 100%;
 }
 .form-inline {
@@ -32,8 +46,30 @@
   padding: 7px 4px 0 14px;
 }
 .sidebar {
-  background: #060661;
+  background: #052586;
   color: #fff;
+  padding: 0;
+  .menu-lateral {
+    .nav-item {
+      a.nav-link {
+        font-size: 12px;
+        //text-transform: uppercase;
+        color: #a9d0fb;
+        line-height: 28px;
+        fa-icon {
+          width: 22px;
+          height: 28px;
+          display: inline-block;
+          font-size: 14px;
+          text-align: center;
+        }
+        &:hover {
+          color: #fff;
+          background-color: rgba(2, 22, 80, 0.7);
+        }
+      }
+    }
+  }
 }
 .body-main {
   background-color: whitesmoke;
@@ -44,4 +80,11 @@
   color: #a9d0fb;
   font-size: 10px;
   line-height: 12px;
+  position: relative;
+  .developAngular {
+    position: absolute;
+    right: 17px;
+    top: 0;
+    font-size: 13px;
+  }
 }

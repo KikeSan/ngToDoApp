@@ -159,10 +159,16 @@ $complete: #28a745;
   border-top-style: none !important;
   background-color: #fff;
   border-radius: 0 0 5px 5px;
-  padding: 1rem;
+  padding: .8rem;
 }
 .card-title {
   text-transform: uppercase;
+      font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+}
+.card-text{
+  font-size: 11px;
 }
 .badge {
   top: -4px;

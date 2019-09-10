@@ -5,18 +5,8 @@
       class="col-10 d-flex justify-content-between"
       id="navbarSupportedContent"
     >
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"
-            >Home <span class="sr-only">(current)</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-      </ul>
       <form
-        class="form-inline my-2 my-lg-0"
+        class="form-inline my-2 my-lg-0 col-5"
         [formGroup]="busqueda"
         (ngSubmit)="buscar()"
       >
@@ -28,13 +18,23 @@
           />
         </div>
         <button
-          class="btn btn-sm btn-outline-primary my-2 my-sm-0"
+          class="btn btn-sm btn-outline-primary my-2 my-sm-0 btn-buscar"
           type="submit"
         >
-          Buscar
+          <fa-icon [icon]="faSearch"></fa-icon>
         </button>
       </form>
-      <div class="user">
+      <ul class="nav justify-content-end col-6">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+      <div class="user col-1">
         <span class="icon is-small is-left">
           <fa-icon [icon]="faUserCircle"></fa-icon>
         </span>
@@ -45,18 +45,26 @@
 <div class="row wrapper-all">
   <nav class="col-2 sidebar">
     <div class="sidebar-sticky">
-      <ul class="nav flex-column">
+      <ul class="nav flex-column menu-lateral">
         <li class="nav-item">
-          <a routerLink="/tareas" class="nav-link">Todos</a>
+          <a routerLink="/tareas" class="nav-link"
+            ><fa-icon [icon]="faListUl"></fa-icon> Todos</a
+          >
         </li>
         <li class="nav-item">
-          <a routerLink="/tareas/todo" class="nav-link">Por hacer</a>
+          <a routerLink="/tareas/todo" class="nav-link"
+            ><fa-icon [icon]="faLayerGroup"></fa-icon> Por hacer</a
+          >
         </li>
         <li class="nav-item">
-          <a routerLink="/tareas/doing" class="nav-link">En proceso</a>
+          <a routerLink="/tareas/doing" class="nav-link"
+            ><fa-icon [icon]="faCode"></fa-icon> En proceso</a
+          >
         </li>
         <li class="nav-item">
-          <a routerLink="/tareas/complete" class="nav-link">Completados</a>
+          <a routerLink="/tareas/complete" class="nav-link"
+            ><fa-icon [icon]="faCheckSquare"></fa-icon> Completados</a
+          >
         </li>
       </ul>
     </div>
@@ -71,5 +79,9 @@
       KIKE SÁNCHEZ © 2019 <br />
       v1.0.0
     </span>
+    <span class="developAngular">
+      <fa-icon [icon]="faCode"></fa-icon> with <fa-icon [icon]="faHeart"></fa-icon> and
+      <fa-icon [icon]="faAngular"></fa-icon
+    ></span>
   </div>
 </div>
