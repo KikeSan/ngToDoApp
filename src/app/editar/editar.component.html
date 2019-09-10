@@ -1,1 +1,48 @@
-<p>editar works!</p>
+<div class="row justify-content-center wrapper-login align-items-center nuevo-wrapper">
+  <form class="col-5 wrapper-form" [formGroup]="grupo" (ngSubmit)="actualizar()">
+    <h3 class="text-center">Crear tarea nueva</h3>
+    
+    <div class="form-group">
+      <label class="label">Titulo</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Ingresar título "
+        formControlName="title"
+      />
+    </div>
+    <div class="form-group">
+      <label class="label">Descripción</label>
+        <textarea
+          class="form-control input is-small"
+          type="text"
+          placeholder="Ingresar descripción"
+          formControlName="description"
+        ></textarea>
+    </div>
+
+    <div class="form-group">
+      <div class="control">
+        <div class="select is-info">
+          <label class="label">Seleccionar estado</label>
+          <select class="form-control" formControlName="status">
+            <option [ngValue]="type" *ngFor="let type of types" [value]="type">{{ type }}</option>
+            <!-- <option>Todo</option>
+                  <option>Doing</option>
+                  <option>Complete</option> -->
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button
+        type="button"
+        class="btn btn-outline-secondary is-small"
+        (click)="volver()"
+      >
+        Cancelar
+      </button>
+      <button class="btn btn-primary is-small">Crear Tarea</button>
+    </div>
+  </form>
+</div>

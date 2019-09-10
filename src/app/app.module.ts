@@ -21,7 +21,7 @@ const rutas:Routes = [
     {path:'doing', component:ListadoComponent},
     {path:'complete', component:ListadoComponent}, */
     {path:'nueva',component:NuevaComponent},
-    {path:'editar',component:EditarComponent},
+    {path:'editar/:id',component:EditarComponent},
     {path:':status',component:ListadoComponent},
   ]},
   {path:'**',component:NologueadoComponent}

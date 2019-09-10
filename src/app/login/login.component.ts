@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AutenticacionService } from '../servicios/autenticacion.service';
 import { faIdBadge } from "@fortawesome/free-regular-svg-icons";
-import { faLock } from "@fortawesome/free-solid-svg-icons";
+import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-login',
@@ -12,6 +12,7 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 export class LoginComponent implements OnInit {
   faIdBadge = faIdBadge
   faLock = faLock
+  faUser = faUser
 
   grupo:FormGroup
 
