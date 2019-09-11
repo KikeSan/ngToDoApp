@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { faEdit, faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import Swal from "sweetalert2";
+
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -60,12 +62,43 @@ export class ListadoComponent implements OnInit {
 
   eliminarTarea(tarea:Tarea){
     console.log('Eliminar tarea');
-    if(!confirm("¿Está seguro que quiere eliminar la tarea?")) return false
+    Swal.fire({
+      title: '',
+      type: 'warning',
+      html:
+        '¿Estás seguro que quieres eliminar la tarea?',
+      showCloseButton: true,
+      showCancelButton: true,
+      focusCancel: true,
+      confirmButtonText:
+        '<fa-icon [icon]="faTrashAlt"></fa-icon> Si',
+      confirmButtonAriaLabel: 'Si',
+      confirmButtonColor: '#dc3545',
+      cancelButtonText:
+        'No',
+      cancelButtonAriaLabel: 'No'
+    }).then((result) => {
+      if (!result.value) return false
+      this.tareaService.eliminar(tarea)
+        .subscribe((resp) => {
+          console.log('result api: ', resp);
+          this.listar()
+        })
+      Swal.fire(
+        '',
+        'La tarea ha sido eliminada.',
+        'success'
+      )
+    })
+    
+    
+
+    /* if(!confirm("¿Está seguro que quiere eliminar la tarea?")) return false
     this.tareaService.eliminar(tarea)
     .subscribe((resp)=>{
       console.log('result api: ',resp);
       this.listar()
-    })
+    }) */
   }
 
 }

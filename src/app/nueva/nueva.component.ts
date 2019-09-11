@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { TareaService } from '../servicios/tarea.service';
 import { faAlignLeft, faFile } from '@fortawesome/free-solid-svg-icons'
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nueva',
@@ -33,7 +34,19 @@ export class NuevaComponent implements OnInit {
       this.tareaService.onActualizar.next()
       this.router.navigate(['/tareas'])
       //alert('Tarea Creada con éxito!')
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-start',
+        showConfirmButton: false,
+        timer: 3000
+      })
+
+      Toast.fire({
+        type: 'success',
+        title: 'Tarea nueva creada'
+      })
     })
+    
   }
 
   volver() {

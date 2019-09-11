@@ -14,8 +14,8 @@ export class MenulateralComponent implements OnInit {
   faSearch = faSearch
   faListUl = faListUl
   faLayerGroup = faLayerGroup
-  faCode = faCode
   faCheckSquare = faCheckSquare
+  faCode = faCode
   faHeart = faHeart
   faAngular = faAngular
 
