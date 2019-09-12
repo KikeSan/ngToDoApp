@@ -33,8 +33,15 @@ export class EditarComponent implements OnInit {
 
       this.tareaService
         .detallar(this.id)
-        .subscribe(resp => this.grupo.patchValue(resp));
+        .subscribe(resp => {
+          this.grupo.patchValue(resp)
+          this.grupo.get('status').setValue(resp.status, {
+            onlySelf: true
+          })
+        });
     });
+
+    
   }
 
   actualizar() {

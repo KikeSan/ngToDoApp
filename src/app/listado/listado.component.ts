@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Tarea } from '../tarea';
 import { TareaService } from '../servicios/tarea.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { faEdit, faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import { faEdit, faTrashAlt, faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import Swal from "sweetalert2";
+import { faThumbtack } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-listado',
@@ -15,6 +16,7 @@ import Swal from "sweetalert2";
 export class ListadoComponent implements OnInit {
   faEdit = faEdit
   faTrashAlt = faTrashAlt
+  faPlusSquare = faPlusSquare
   tareas:Tarea[]
 
   grupo:FormGroup
@@ -81,16 +83,16 @@ export class ListadoComponent implements OnInit {
       if (!result.value) return false
       this.tareaService.eliminar(tarea)
         .subscribe((resp) => {
-          console.log('result api: ', resp);
+          console.log('result api: ', resp)
+          this.tareaService.onActualizar.next()
           this.listar()
         })
-      Swal.fire(
+      /* Swal.fire(
         '',
         'La tarea ha sido eliminada.',
         'success'
-      )
+      ) */
     })
-    
     
 
     /* if(!confirm("¿Está seguro que quiere eliminar la tarea?")) return false

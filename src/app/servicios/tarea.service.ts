@@ -13,7 +13,7 @@ export class TareaService {
   constructor(private http: HttpClient) {}
 
   listar(): Observable<Tarea[]> {
-    return this.http.get<any>('http://localhost:8001/tareas').pipe(delay(100));
+    return this.http.get<any>('http://localhost:8001/tareas')/* .pipe(delay(100)) */;
   }
 
   detallar(id: string): Observable<Tarea> {

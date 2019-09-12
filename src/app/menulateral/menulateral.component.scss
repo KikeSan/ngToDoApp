@@ -1,9 +1,21 @@
 .wrapper-nav {
   background: #fff;
   margin: 30px 30px 0;
-  border-radius: 5px 5px 0 0;
+  border-radius: 10px 5px 0 0;
   //overflow: hidden;
   box-shadow: 5px 12px 10px -5px #0555a5;
+  .logoHome {
+    width: 28px;
+    border-radius: 50%;
+    margin: 17px 8px 0 15px;
+  }
+  .logoText {
+    color: #fff;
+    position: absolute;
+    top: 12px;
+    font-family: 'Aladin', cursive;
+    font-size: 26px;
+  }
   form {
     input {
       border-radius: 20px;
@@ -21,7 +33,7 @@
 }
 .wrapper-all {
   background: #fff;
-  margin: 0 30px 10px;
+  margin: 0 30px 8px;
   border-radius: 0 0 5px 5px;
   overflow: hidden;
   height: 82vh;
@@ -36,6 +48,7 @@
   margin: 0;
   background: #052586;
   height: 100%;
+  border-radius: 5px 0 0;
 }
 .form-inline {
   padding: 10px 0;
@@ -63,7 +76,7 @@
   background: #052586;
   background-size: cover;
   color: #fff;
-  padding: 0;
+  padding: 25px 0 0;
   .menu-lateral {
     .nav-item {
       a.nav-link {
@@ -82,6 +95,13 @@
           color: #fff;
           background-color: rgba(2, 22, 80, 0.7);
         }
+        .badge {
+          line-height: 15px;
+          height: 17px;
+          margin: 5px 0;
+          color: #b3d7ff;
+          background-color: #1976d2;
+        }
       }
     }
   }
@@ -93,13 +113,13 @@
   padding: 0 15px;
   margin: 0;
   color: #a9d0fb;
-  font-size: 10px;
+  font-size: 9px;
   line-height: 12px;
   position: relative;
   .developAngular {
     position: absolute;
     right: 20px;
     top: 0;
-    font-size: 13px;
+    font-size: 12px;
   }
 }

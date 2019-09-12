@@ -1,6 +1,9 @@
 <div class="row wrapper-nav">
   <nav class="navbar col-12 navbar-light navbar-expand-lg row">
-    <a class="navbar-brand col-2" href="#">Navbar</a>
+    <a class="navbar-brand col-2" routerLink="/tareas">
+      <img src="../../assets/images/logoSM.png" alt="Home" class="logoHome">
+      <span class="logoText">Eficapp</span>
+    </a>
     <div
       class="col-10 d-flex justify-content-between"
       id="navbarSupportedContent"
@@ -26,9 +29,7 @@
       </form>
       <ul class="nav justify-content-end col-6">
         <li class="nav-item active">
-          <a class="nav-link" href="#"
-            >Home <span class="sr-only">(current)</span></a
-          >
+          <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
@@ -50,7 +51,10 @@
             </span>
           </a>
 
-          <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+          <div
+            class="dropdown-menu  dropdown-menu-right"
+            aria-labelledby="dropdownMenuLink"
+          >
             <a class="dropdown-item" href="#">Mi perfil</a>
             <a class="dropdown-item" href="#">Preferencias</a>
             <a class="dropdown-item" (click)="logout()">Cerrar sesión</a>
@@ -65,23 +69,35 @@
     <div class="sidebar-sticky">
       <ul class="nav flex-column menu-lateral">
         <li class="nav-item">
-          <a routerLink="/tareas" class="nav-link"
-            ><fa-icon [icon]="faListUl"></fa-icon> Todos</a
+          <a
+            routerLink="/tareas"
+            class="nav-link d-flex justify-content-between"
+            ><span><fa-icon [icon]="faListUl"></fa-icon> Todos</span>
+            <div class="badge badge-pill">{{ cantAll }}</div></a
           >
         </li>
         <li class="nav-item">
-          <a routerLink="/tareas/todo" class="nav-link"
-            ><fa-icon [icon]="faLayerGroup"></fa-icon> Por hacer</a
+          <a
+            routerLink="/tareas/todo"
+            class="nav-link d-flex justify-content-between"
+            ><span><fa-icon [icon]="faLayerGroup"></fa-icon> Por hacer</span>
+            <div class="badge badge-pill">{{ cantTodo }}</div></a
           >
         </li>
         <li class="nav-item">
-          <a routerLink="/tareas/doing" class="nav-link"
-            ><fa-icon [icon]="faCode"></fa-icon> En proceso</a
+          <a
+            routerLink="/tareas/doing"
+            class="nav-link d-flex justify-content-between"
+            ><span><fa-icon [icon]="faCode"></fa-icon> En proceso</span>
+            <div class="badge badge-pill">{{ cantDoing }}</div></a
           >
         </li>
         <li class="nav-item">
-          <a routerLink="/tareas/complete" class="nav-link"
-            ><fa-icon [icon]="faCheckSquare"></fa-icon> Completados</a
+          <a
+            routerLink="/tareas/complete"
+            class="nav-link d-flex justify-content-between"
+            ><span><fa-icon [icon]="faCheckSquare"></fa-icon> Completados</span>
+            <div class="badge badge-pill">{{ cantComplete }}</div></a
           >
         </li>
       </ul>
