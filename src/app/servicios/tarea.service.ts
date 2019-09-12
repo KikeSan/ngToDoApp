@@ -9,6 +9,7 @@ import { Tarea } from '../tarea';
 })
 export class TareaService {
   onActualizar: Subject<any> = new Subject();
+  onBusqueda: Subject<any> = new Subject()
 
   constructor(private http: HttpClient) {}
 

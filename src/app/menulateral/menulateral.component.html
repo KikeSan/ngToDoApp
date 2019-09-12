@@ -11,21 +11,34 @@
       <form
         class="form-inline my-2 my-lg-0 col-5"
         [formGroup]="busqueda"
-        (ngSubmit)="buscar()"
       >
+      <!-- <form
+        class="form-inline my-2 my-lg-0 col-5"
+        [formGroup]="busqueda"
+        (ngSubmit)="buscar()"
+      > -->
         <div class="input-group input-group-sm">
           <input
             class="form-control mr-sm-2"
-            type="search"
-            placeholder="Buscar tarea"
+            type="text"
+            placeholder="Buscar tarea" 
+            formControlName="buscame"
           />
+          <!-- <input
+            class="form-control mr-sm-2"
+            type="text"
+            placeholder="Buscar tarea" 
+            formControlName="buscame"
+            [ngModel]="buscar()"
+            (ngModelChange)="buscar($event)"
+          /> -->
         </div>
-        <button
+        <!-- <button
           class="btn btn-sm btn-outline-primary my-2 my-sm-0 btn-buscar"
           type="submit"
         >
           <fa-icon [icon]="faSearch"></fa-icon>
-        </button>
+        </button> -->
       </form>
       <ul class="nav justify-content-end col-6">
         <li class="nav-item nav-redes d-flex justify-content-between">

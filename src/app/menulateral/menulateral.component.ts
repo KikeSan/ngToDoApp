@@ -49,6 +49,8 @@ export class MenulateralComponent implements OnInit {
   cantDoing = 0;
   cantComplete = 0;
 
+  //buscarTerm = 'tarea'
+
   busqueda: FormGroup;
   constructor(
     private authService: AutenticacionService,
@@ -76,7 +78,11 @@ export class MenulateralComponent implements OnInit {
     });
   }
 
-  buscar() {}
+  buscar(txt:string):string {
+    console.log('buscame: ',txt);
+    let res = 'tarea'
+    return res
+  }
 
   logout() {
     //this.autenticacionServicio.logout()

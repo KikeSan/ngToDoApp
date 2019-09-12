@@ -19,6 +19,8 @@ export class ListadoComponent implements OnInit {
   faPlusSquare = faPlusSquare
   tareas:Tarea[]
 
+  //buscarTerm = 'tarea'
+
   grupo:FormGroup
 
   constructor(private tareaService:TareaService, private router:Router, private actRouter:ActivatedRoute) { }

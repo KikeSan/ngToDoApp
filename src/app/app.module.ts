@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { NologueadoComponent } from './nologueado/nologueado.component';
 import { ListadoComponent } from './listado/listado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenulateralComponent } from './menulateral/menulateral.component';
+import { FiltrosPipe } from './pipes/filtros.pipe';
 
 const rutas:Routes = [
   {path:'',component:LoginComponent},
@@ -35,14 +36,16 @@ const rutas:Routes = [
     EditarComponent,
     NologueadoComponent,
     ListadoComponent,
-    MenulateralComponent
+    MenulateralComponent,
+    FiltrosPipe
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(rutas),
     ReactiveFormsModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
