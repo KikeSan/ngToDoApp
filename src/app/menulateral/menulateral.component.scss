@@ -27,7 +27,40 @@
   .navbar ul.nav {
     padding: 0;
     a {
-      padding: 0.8rem 1rem;
+      padding: 0.7rem 1rem 0;
+      fa-icon {
+        font-size: 14px;
+      }
+    }
+    .nav-item:not(.nav-redes) {
+      .nav-link {
+        //background-color: #e6f2ff;
+        border-radius: 50%;
+        margin-top: 12px;
+        width: 26px;
+        height: 26px;
+        padding: 0px 6px;
+        border: 1px solid #007bff;
+        &:hover{
+          background-color: #007bff;
+          fa-icon{
+            color: #fff;
+          }
+        }
+      }
+    }
+    .nav-redes {
+      margin-right: 15px;
+      a {
+        padding: 0.9rem 0.3rem 0;
+        color: #bbbbbb;
+        &:hover {
+          color: #007bff;
+        }
+      }
+      fa-icon {
+        font-size: 16px;
+      }
     }
   }
 }

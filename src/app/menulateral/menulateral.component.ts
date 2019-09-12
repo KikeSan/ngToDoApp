@@ -9,9 +9,18 @@ import {
   faCheckSquare,
   faHeart
 } from '@fortawesome/free-solid-svg-icons';
-import { faAngular } from '@fortawesome/free-brands-svg-icons';
+import {
+  faAngular,
+  faGithubAlt,
+  faMedium,
+  faBehance,
+  faFacebook,
+  faTwitter,
+  faYoutube
+} from '@fortawesome/free-brands-svg-icons';
 import { AutenticacionService } from '../servicios/autenticacion.service';
 import { TareaService } from '../servicios/tarea.service';
+import { faBell } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-menulateral',
@@ -27,6 +36,13 @@ export class MenulateralComponent implements OnInit {
   faCode = faCode;
   faHeart = faHeart;
   faAngular = faAngular;
+  faBell = faBell;
+  faGithubAlt = faGithubAlt;
+  faMedium = faMedium;
+  faBehance = faBehance;
+  faFacebook = faFacebook;
+  faTwitter = faTwitter;
+  faYoutube = faYoutube;
 
   cantAll = 0;
   cantTodo = 0;
