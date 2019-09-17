@@ -23,15 +23,16 @@ export class TareaService {
 
   filtrar(param): Observable<Tarea[]> {
     console.log('FILTRAR> ', param);
-
-    return this.http.get<any>('http://localhost:8001/tareas').pipe(
+    return this.http.get<any>('http://localhost:8001/tareas')
+    .pipe(
       map(tarea => {
         return tarea.filter(task => {
           return task.status === param;
-        });
+        })
       })
-    );
+    )
   }
+
   insertar(tarea: Tarea): Observable<any> {
     return this.http.post(
       `http://localhost:8001/tareas?title=${tarea.title}&description=${tarea.description}&status=${tarea.status}`,
