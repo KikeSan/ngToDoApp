@@ -35,7 +35,7 @@ export class TareaService {
 
   insertar(tarea: Tarea): Observable<any> {
     return this.http.post(
-      `http://localhost:8001/tareas?title=${tarea.title}&description=${tarea.description}&status=${tarea.status}`,
+      `http://localhost:8001/tareas?title=${tarea.title}&description=${tarea.description}&status=${tarea.status}&fecha=${tarea.fecha}`,
       tarea
     );
   }
@@ -44,7 +44,7 @@ export class TareaService {
     console.log('Service: ', tarea);
 
     return this.http.put(
-      `http://localhost:8001/tareas/actualizar?id=${tarea.id}&title=${tarea.title}&description=${tarea.description}&status=${tarea.status}`,
+      `http://localhost:8001/tareas/actualizar?id=${tarea.id}&title=${tarea.title}&description=${tarea.description}&status=${tarea.status}&fecha=${tarea.fecha}`,
       tarea
     );
   }

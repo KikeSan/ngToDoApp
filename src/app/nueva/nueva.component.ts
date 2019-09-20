@@ -25,6 +25,7 @@ export class NuevaComponent implements OnInit {
       title: new FormControl(null, Validators.required),
       description: new FormControl(null, Validators.required),
       status: new FormControl(null, Validators.required),
+      fecha: new FormControl(new Date())
     })
     //this.porDefault = this.types[0]
     this.grupo.get('status').setValue('todo', {

@@ -24,7 +24,8 @@ export class EditarComponent implements OnInit {
       id: new FormControl(),
       title: new FormControl(null, Validators.required),
       description: new FormControl(null, Validators.required),
-      status: new FormControl(null, Validators.required)
+      status: new FormControl(null, Validators.required),
+      fecha: new FormControl(new Date())
     });
     //this._id = this.activateRoute.snapshot.paramMap.get("_id")
     //Necesitamos un observador sino solo se ejecuta una vez

@@ -45,7 +45,7 @@ export class MenulateralComponent implements OnInit {
   faYoutube = faYoutube;
   faCalendarAlt = faCalendarAlt
 
-  fecha
+  fecha = new Date()
   
   cantAll = 0;
   cantTodo = 0;
@@ -69,7 +69,7 @@ export class MenulateralComponent implements OnInit {
       this.tareaService.onActualizar.subscribe(() => {
         this.contar();
       });
-      setInterval(() => { this.fecha = new Date()},1000)
+      setInterval(() => { this.fecha = new Date()},60000)
   }
 
   contar() {

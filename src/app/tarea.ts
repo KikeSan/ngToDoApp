@@ -3,4 +3,5 @@ export interface Tarea {
   title:string
   description:string
   status:string
+  fecha?:string
 }

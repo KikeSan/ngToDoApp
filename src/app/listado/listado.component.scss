@@ -108,8 +108,8 @@ $azul: #007bff;
 $rojo: #dc3545;
 $gris: #fff;
 
-$todo: #6c757d;
-$doing: #17a2b8;
+$todo: #868d93;
+$doing: #16b1c9;
 $complete: #28a745;
 
 .row-header {
@@ -143,23 +143,44 @@ $complete: #28a745;
       color: #fff;
     }
     &.card-todo {
-      .card-body,
+      //.card-body,
       .card-header {
         border: 1px solid $todo;
         @extend %gTodo;
       }
+      .card-body{
+        border: 1px solid $todo;
+        background-color: $todo;
+      }
+      .fecha{
+        @extend %gTodo;
+      }
     }
     &.card-doing {
-      .card-body,
+      //.card-body,
       .card-header {
         border: 1px solid $doing;
         @extend %gDoing;
       }
+      .card-body{
+        border: 1px solid $doing;
+        background-color: $doing;
+      }
+      .fecha{
+        @extend %gDoing;
+      }
     }
     &.card-complete {
-      .card-body,
+      //.card-body,
       .card-header {
         border: 1px solid $complete;
+        @extend %gComplete;
+      }
+      .card-body{
+        border: 1px solid $complete;
+        background-color: $complete;
+      }
+      .fecha{
         @extend %gComplete;
       }
     }
@@ -176,6 +197,16 @@ $complete: #28a745;
   background-color: #fff;
   border-radius: 0 0 5px 5px;
   padding: 0.8rem;
+}
+.fecha{
+  position: absolute;
+  right: 8px;
+  font-size: 10px;
+  top: 38px;
+  background: #f5f5f5;
+  padding: 3px 6px;
+  border-radius: 0 0 0 7px;
+  text-transform: uppercase;
 }
 .card-title {
   text-transform: uppercase;
