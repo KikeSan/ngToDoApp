@@ -16,6 +16,17 @@
     font-family: 'Aladin', cursive;
     font-size: 24px;
   }
+  .fechaApp{
+    fa-icon{
+      font-size: 14px;
+      color:#007bff;
+    }
+    .time{
+      line-height: 46px;
+      font-size: 12px;
+      color:#6c757d;
+    }
+  }
   form {
     input {
       border-radius: 20px;

@@ -20,7 +20,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { AutenticacionService } from '../servicios/autenticacion.service';
 import { TareaService } from '../servicios/tarea.service';
-import { faBell } from '@fortawesome/free-regular-svg-icons';
+import { faBell, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-menulateral',
@@ -43,29 +43,33 @@ export class MenulateralComponent implements OnInit {
   faFacebook = faFacebook;
   faTwitter = faTwitter;
   faYoutube = faYoutube;
+  faCalendarAlt = faCalendarAlt
 
+  fecha
+  
   cantAll = 0;
   cantTodo = 0;
   cantDoing = 0;
   cantComplete = 0;
-
+  
   //buscarTerm = 'tarea'
-
+  
   busqueda: FormGroup;
   constructor(
     private authService: AutenticacionService,
     private tareaService: TareaService
-  ) {}
-
-  ngOnInit() {
-    this.busqueda = new FormGroup({
-      buscame: new FormControl(null, Validators.required)
-    });
-
-    this.contar();
-    this.tareaService.onActualizar.subscribe(() => {
+    ) {}
+    
+    ngOnInit() {
+      this.busqueda = new FormGroup({
+        buscame: new FormControl(null, Validators.required)
+      });
+      
       this.contar();
-    });
+      this.tareaService.onActualizar.subscribe(() => {
+        this.contar();
+      });
+      setInterval(() => { this.fecha = new Date()},1000)
   }
 
   contar() {
