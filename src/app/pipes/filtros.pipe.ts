@@ -7,12 +7,23 @@ import { TareaService } from '../servicios/tarea.service';
 export class FiltrosPipe implements PipeTransform {
   constructor(private tareaService:TareaService){}
   transform(value: Array<any>, buscar: string): any {
-    this.tareaService.listar().subscribe(resp=>{
-      const resultado = resp.filter(item => {
-        return item.title.toUpperCase().indexOf(buscar.toUpperCase()) > -1
-      })
-      return resultado
-    })
+    //this.tareaService.listar().subscribe(resp=>{
+      try {
+        console.log('PIPE> ', value);
+
+        const resultado = value.filter(item => {
+          console.log(item.title.toUpperCase().indexOf(buscar.toUpperCase()) > -1);
+
+          return item.title.toUpperCase().indexOf(buscar.toUpperCase()) > -1
+        })
+        console.log(resultado);
+
+        return resultado
+      } catch (error) {
+        
+      }
+      
+    //})
     
   }
 

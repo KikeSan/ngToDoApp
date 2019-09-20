@@ -6,7 +6,7 @@ import { faEdit, faTrashAlt, faPlusSquare } from "@fortawesome/free-regular-svg-
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import Swal from "sweetalert2";
-import { faThumbtack } from '@fortawesome/free-solid-svg-icons';
+import { faThumbtack, faFilter } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-listado',
@@ -17,13 +17,20 @@ export class ListadoComponent implements OnInit {
   faEdit = faEdit
   faTrashAlt = faTrashAlt
   faPlusSquare = faPlusSquare
+  faFilter=faFilter
   tareas:Tarea[]
 
-  //buscarTerm = 'tarea'
+  buscarTerm = ''
+  isFilter:boolean=false
 
   grupo:FormGroup
 
   constructor(private tareaService:TareaService, private router:Router, private actRouter:ActivatedRoute) { }
+
+  changefilter(){
+    console.log('FOCUS ',!this.isFilter)
+    this.isFilter = !this.isFilter
+  }
 
   ngOnInit() {
     /* this.grupo = new FormGroup({
