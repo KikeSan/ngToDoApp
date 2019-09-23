@@ -1,44 +1,41 @@
 <div class="row wrapper-nav">
   <nav class="navbar col-12 navbar-light navbar-expand-lg row">
     <a class="navbar-brand col-2" routerLink="/tareas">
-      <img src="../../assets/images/logoSM.png" alt="Home" class="logoHome">
-      <span class="logoText">Taskmaker</span>
+      <img src="../../assets/images/logoSM.png" alt="Home" class="logoHome" />
+      <span class="logoText ">Taskmaker</span>
     </a>
     <div
       class="col-10 d-flex justify-content-between"
       id="navbarSupportedContent"
     >
-    <div class="fechaApp col-5">
-      <span class="time"> <fa-icon [icon]="faCalendarAlt"></fa-icon> {{ fecha | date: 'dd MMM,yy hh:mm' }}</span>
-    </div>
-     
-      <ul class="nav justify-content-end col-6">
+      <div class="fechaApp col-6 col-sm-5">
+        <span class="time">
+          <fa-icon [icon]="faCalendarAlt"></fa-icon>
+          {{ fecha | date: 'dd MMM,yy hh:mm' }}</span
+        >
+      </div>
+
+      <ul class="nav justify-content-end col-6 d-none d-sm-flex">
         <li class="nav-item nav-redes d-flex justify-content-between">
-          <a class="nav-link" href="#"><fa-icon [icon]="faFacebook"></fa-icon></a>
-          <a class="nav-link" href="#"><fa-icon [icon]="faTwitter"></fa-icon></a>
+          <a class="nav-link" href="#"
+            ><fa-icon [icon]="faFacebook"></fa-icon
+          ></a>
+          <a class="nav-link" href="#"
+            ><fa-icon [icon]="faTwitter"></fa-icon
+          ></a>
           <a class="nav-link" href="#"><fa-icon [icon]="faMedium"></fa-icon></a>
-          <a class="nav-link" href="#"><fa-icon [icon]="faGithubAlt"></fa-icon></a>
+          <a class="nav-link" href="#"
+            ><fa-icon [icon]="faGithubAlt"></fa-icon
+          ></a>
         </li>
-
-
-
-
-
 
         <li class="nav-item">
           <a class="nav-link" routerLink="notifications">
             <fa-icon [icon]="faBell"></fa-icon>
           </a>
         </li>
-
-
-
-
-
-
-        
       </ul>
-      <div class="user col-1">
+      <div class="user col-3 col-sm-1">
         <div class="dropdown">
           <a
             class="dropdown-toggle"
@@ -75,32 +72,53 @@
           <a
             routerLink="/tareas"
             class="nav-link d-flex justify-content-between"
-            ><span><fa-icon [icon]="faListUl"></fa-icon> Todos</span>
-            <div class="badge badge-pill">{{ cantAll }}</div></a
+          >
+            <span>
+              <fa-icon [icon]="faListUl"></fa-icon>
+              <span class="d-none d-sm-inline-block">Todos</span>
+            </span>
+            <div class="badge badge-pill d-none d-sm-inline-block">
+              {{ cantAll }}
+            </div></a
           >
         </li>
         <li class="nav-item">
           <a
             routerLink="/tareas/todo"
             class="nav-link d-flex justify-content-between"
-            ><span><fa-icon [icon]="faLayerGroup"></fa-icon> Por hacer</span>
-            <div class="badge badge-pill">{{ cantTodo }}</div></a
+            ><span
+              ><fa-icon [icon]="faLayerGroup"></fa-icon>
+              <span class="d-none d-sm-inline-block">Por hacer</span></span
+            >
+            <div class="badge badge-pill d-none d-sm-inline-block">
+              {{ cantTodo }}
+            </div></a
           >
         </li>
         <li class="nav-item">
           <a
             routerLink="/tareas/doing"
             class="nav-link d-flex justify-content-between"
-            ><span><fa-icon [icon]="faCode"></fa-icon> En proceso</span>
-            <div class="badge badge-pill">{{ cantDoing }}</div></a
+            ><span
+              ><fa-icon [icon]="faCode"></fa-icon>
+              <span class="d-none d-sm-inline-block">En proceso</span></span
+            >
+            <div class="badge badge-pill d-none d-sm-inline-block">
+              {{ cantDoing }}
+            </div></a
           >
         </li>
         <li class="nav-item">
           <a
             routerLink="/tareas/complete"
             class="nav-link d-flex justify-content-between"
-            ><span><fa-icon [icon]="faCheckSquare"></fa-icon> Completados</span>
-            <div class="badge badge-pill">{{ cantComplete }}</div></a
+            ><span
+              ><fa-icon [icon]="faCheckSquare"></fa-icon>
+              <span class="d-none d-sm-inline-block">Completados</span></span
+            >
+            <div class="badge badge-pill d-none d-sm-inline-block">
+              {{ cantComplete }}
+            </div></a
           >
         </li>
       </ul>

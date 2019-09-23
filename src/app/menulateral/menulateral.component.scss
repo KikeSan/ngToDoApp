@@ -15,8 +15,14 @@
     top: 12px;
     font-family: 'Aladin', cursive;
     font-size: 24px;
+    @media (max-width: 475px){
+      display: none;
+    }
   }
   .fechaApp{
+    @media (max-width: 475px){
+      padding: 0;
+    }
     fa-icon{
       font-size: 14px;
       color:#007bff;
@@ -80,7 +86,7 @@
   margin: 0 30px 8px;
   border-radius: 0 0 5px 5px;
   overflow: hidden;
-  height: 82vh;
+  height: calc(100vh - 116px);
   box-shadow: 5px 12px 10px -5px #0555a5;
 }
 .navbar {
