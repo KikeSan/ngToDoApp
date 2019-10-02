@@ -1,33 +1,34 @@
-import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
-import { delay, map, filter, pluck } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-import { Tarea } from '../tarea';
+import { Injectable } from '@angular/core'
+import { Subject, Observable } from 'rxjs'
+import { delay, map, filter, pluck } from 'rxjs/operators'
+import { HttpClient } from '@angular/common/http'
+import { Tarea } from '../tarea'
 
 @Injectable({
   providedIn: 'root'
 })
 export class TareaService {
-  onActualizar: Subject<any> = new Subject();
+  onActualizar: Subject<any> = new Subject()
   onBusqueda: Subject<any> = new Subject()
 
   constructor(private http: HttpClient) {}
 
   listar(): Observable<Tarea[]> {
-    return this.http.get<any>('http://localhost:8001/tareas')/* .pipe(delay(100)) */;
+    return this.http.get<any>(
+      'http://localhost:3000/tareas'
+    ) /* .pipe(delay(100)) */
   }
 
   detallar(id: string): Observable<Tarea> {
-    return this.http.get<Tarea>(`http://localhost:8001/tareas/editar/${id}`);
+    return this.http.get<Tarea>(`http://localhost:3000/tareas/editar/${id}`)
   }
 
   filtrar(param): Observable<Tarea[]> {
-    console.log('FILTRAR> ', param);
-    return this.http.get<any>('http://localhost:8001/tareas')
-    .pipe(
+    console.log('FILTRAR> ', param)
+    return this.http.get<any>('http://localhost:3000/tareas').pipe(
       map(tarea => {
         return tarea.filter(task => {
-          return task.status === param;
+          return task.status === param
         })
       })
     )
@@ -35,21 +36,21 @@ export class TareaService {
 
   insertar(tarea: Tarea): Observable<any> {
     return this.http.post(
-      `http://localhost:8001/tareas?title=${tarea.title}&description=${tarea.description}&status=${tarea.status}&fecha=${tarea.fecha}`,
+      `http://localhost:3000/tareas?title=${tarea.title}&description=${tarea.description}&status=${tarea.status}&fecha=${tarea.fecha}`,
       tarea
-    );
+    )
   }
 
   modificar(tarea: Tarea): Observable<any> {
-    console.log('Service: ', tarea);
+    console.log('Service: ', tarea)
 
     return this.http.put(
-      `http://localhost:8001/tareas/actualizar?id=${tarea.id}&title=${tarea.title}&description=${tarea.description}&status=${tarea.status}&fecha=${tarea.fecha}`,
+      `http://localhost:3000/tareas/actualizar?id=${tarea.id}&title=${tarea.title}&description=${tarea.description}&status=${tarea.status}&fecha=${tarea.fecha}`,
       tarea
-    );
+    )
   }
 
   eliminar(tarea: Tarea): Observable<any> {
-    return this.http.delete(`http://localhost:8001/tareas/${tarea.id}`);
+    return this.http.delete(`http://localhost:3000/tareas/${tarea.id}`)
   }
 }
