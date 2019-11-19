@@ -3,8 +3,19 @@
     <h3>Lista de tareas</h3>
   </div>
   <div class="col-12 col-sm-4">
-    <input class="form-control mr-sm-2" type="text" placeholder="Filtrar tareas" [(ngModel)]="buscarTerm" (focus)="changefilter()" (blur)="changefilter()"/>
-    <fa-icon [icon]="faFilter" class="iconFilter" [ngClass]="{inFocus:isFilter}"></fa-icon>
+    <input
+      class="form-control mr-sm-2"
+      type="text"
+      placeholder="Filtrar tareas"
+      [(ngModel)]="buscarTerm"
+      (focus)="changefilter()"
+      (blur)="changefilter()"
+    />
+    <fa-icon
+      [icon]="faFilter"
+      class="iconFilter"
+      [ngClass]="{ inFocus: isFilter }"
+    ></fa-icon>
   </div>
   <div class="col-12 col-sm-3 text-right">
     <a routerLink="/tareas/nueva" class="btn btn-primary"
@@ -13,20 +24,23 @@
   </div>
 </div>
 <div class="row row-listado">
-  <div *ngFor="let tarea of tareas | filtros: buscarTerm" class="card col-sm-4 col-md-3 col-xl-2 card-{{ tarea.status }}">
+  <div
+    *ngFor="let tarea of tareas | filtros: buscarTerm"
+    class="card col-sm-4 col-md-3 col-xl-2 card-{{ tarea.status }}"
+  >
     <div class="card-header">
-      <span class="badge badge-{{tarea.status}}">{{ tarea.status }}</span>
+      <span class="badge badge-{{ tarea.status }}">{{ tarea.status }}</span>
       <div class="menu">
-        <a class="menu--item menu--editar" (click)="editarTarea(tarea.id)">
+        <a class="menu--item menu--editar" (click)="editarTarea(tarea._id)">
           <fa-icon [icon]="faEdit"></fa-icon>
         </a>
-        <a class="menu--item menu--eliminar" (click)="eliminarTarea(tarea)">
+        <a class="menu--item menu--eliminar" (click)="eliminarTarea(tarea._id)">
           <fa-icon [icon]="faTrashAlt"></fa-icon>
         </a>
       </div>
     </div>
     <div class="card-body">
-      <span class="fecha">{{tarea.fecha | date: 'd MMM'}}</span>
+      <span class="fecha">{{ tarea.fecha | date: 'd MMM' }}</span>
       <p class="card-title">{{ tarea.title }}</p>
       <p class="card-text">{{ tarea.description }}</p>
     </div>

@@ -21,7 +21,7 @@ export class EditarComponent implements OnInit {
 
   ngOnInit() {
     this.grupo = new FormGroup({
-      id: new FormControl(),
+      //_id: new FormControl(),
       title: new FormControl(null, Validators.required),
       description: new FormControl(null, Validators.required),
       status: new FormControl(null, Validators.required),
@@ -31,37 +31,37 @@ export class EditarComponent implements OnInit {
     //Necesitamos un observador sino solo se ejecuta una vez
     this.activateRoute.paramMap.subscribe((data: any) => {
       this.id = data.params.id;
+      console.log('[ID]', data.params.id);
 
-      this.tareaService
-        .detallar(this.id)
-        .subscribe(resp => {
-          this.grupo.patchValue(resp)
-          this.grupo.get('status').setValue(resp.status, {
-            onlySelf: true
-          })
+      this.tareaService.detallar(this.id).subscribe(resp => {
+        console.log('[RESP]', resp['result']);
+        this.grupo.patchValue(resp['result']);
+        this.grupo.get('status').setValue(resp['result'].status, {
+          onlySelf: true
         });
+      });
     });
-
-    
   }
 
   actualizar() {
-    this.tareaService.modificar(this.grupo.getRawValue()).subscribe(resp => {
-      this.tareaService.onActualizar.next();
-      this.router.navigate(['/tareas']);
-      //alert("Tarea Actualizado!")
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'bottom-start',
-        showConfirmButton: false,
-        timer: 3000
-      });
+    this.tareaService
+      .modificar(this.grupo.getRawValue(), this.id)
+      .subscribe(resp => {
+        this.tareaService.onActualizar.next();
+        this.router.navigate(['/tareas']);
+        //alert("Tarea Actualizado!")
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'bottom-start',
+          showConfirmButton: false,
+          timer: 3000
+        });
 
-      Toast.fire({
-        type: 'success',
-        title: 'Tarea actualizada!'
+        Toast.fire({
+          type: 'success',
+          title: 'Tarea actualizada!'
+        });
       });
-    });
   }
 
   volver() {

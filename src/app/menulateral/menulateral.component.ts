@@ -43,49 +43,51 @@ export class MenulateralComponent implements OnInit {
   faFacebook = faFacebook;
   faTwitter = faTwitter;
   faYoutube = faYoutube;
-  faCalendarAlt = faCalendarAlt
+  faCalendarAlt = faCalendarAlt;
 
-  fecha = new Date()
-  
+  fecha = new Date();
+
   cantAll = 0;
   cantTodo = 0;
   cantDoing = 0;
   cantComplete = 0;
-  
+
   //buscarTerm = 'tarea'
-  
+
   busqueda: FormGroup;
   constructor(
     private authService: AutenticacionService,
     private tareaService: TareaService
-    ) {}
-    
-    ngOnInit() {
-      this.busqueda = new FormGroup({
-        buscame: new FormControl(null, Validators.required)
-      });
-      
+  ) {}
+
+  ngOnInit() {
+    this.busqueda = new FormGroup({
+      buscame: new FormControl(null, Validators.required)
+    });
+
+    this.contar();
+    this.tareaService.onActualizar.subscribe(() => {
       this.contar();
-      this.tareaService.onActualizar.subscribe(() => {
-        this.contar();
-      });
-      setInterval(() => { this.fecha = new Date()},60000)
+    });
+    setInterval(() => {
+      this.fecha = new Date();
+    }, 60000);
   }
 
   contar() {
     this.tareaService.listar().subscribe(tareas => {
-      console.log('Contar----- ', tareas.length);
-      this.cantAll = tareas.length;
-      this.cantTodo = tareas.filter(t => t.status == 'todo').length;
-      this.cantDoing = tareas.filter(t => t.status == 'doing').length;
-      this.cantComplete = tareas.filter(t => t.status == 'complete').length;
+      const tareaList = tareas['results'];
+      this.cantAll = tareaList.length;
+      this.cantTodo = tareaList.filter(t => t.status == 'todo').length;
+      this.cantDoing = tareaList.filter(t => t.status == 'doing').length;
+      this.cantComplete = tareaList.filter(t => t.status == 'complete').length;
     });
   }
 
-  buscar(txt:string):string {
-    console.log('buscame: ',txt);
-    let res = 'tarea'
-    return res
+  buscar(txt: string): string {
+    console.log('buscame: ', txt);
+    let res = 'tarea';
+    return res;
   }
 
   logout() {

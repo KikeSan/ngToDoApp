@@ -124,14 +124,14 @@ $complete: #28a745;
     right: 28px;
     color: #bbb;
   }
-  .inFocus{
+  .inFocus {
     color: $azul;
   }
 
-  .btn-primary{
-    @media (max-width: 475px){
+  .btn-primary {
+    @media (max-width: 475px) {
       width: 100%;
-      margin-top:15px;
+      margin-top: 15px;
     }
   }
 }
@@ -155,11 +155,11 @@ $complete: #28a745;
         border: 1px solid $todo;
         @extend %gTodo;
       }
-      .card-body{
+      .card-body {
         border: 1px solid $todo;
         background-color: $todo;
       }
-      .fecha{
+      .fecha {
         @extend %gTodo;
       }
     }
@@ -169,11 +169,11 @@ $complete: #28a745;
         border: 1px solid $doing;
         @extend %gDoing;
       }
-      .card-body{
+      .card-body {
         border: 1px solid $doing;
         background-color: $doing;
       }
-      .fecha{
+      .fecha {
         @extend %gDoing;
       }
     }
@@ -183,11 +183,11 @@ $complete: #28a745;
         border: 1px solid $complete;
         @extend %gComplete;
       }
-      .card-body{
+      .card-body {
         border: 1px solid $complete;
         background-color: $complete;
       }
-      .fecha{
+      .fecha {
         @extend %gComplete;
       }
     }
@@ -205,7 +205,7 @@ $complete: #28a745;
   border-radius: 0 0 5px 5px;
   padding: 0.8rem;
 }
-.fecha{
+.fecha {
   position: absolute;
   right: 8px;
   font-size: 9px;
@@ -219,7 +219,7 @@ $complete: #28a745;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: bold;
-  line-height: 8px;
+  line-height: 12px;
   margin-top: 14px;
 }
 .card-text {
