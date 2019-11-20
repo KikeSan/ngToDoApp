@@ -1,4 +1,4 @@
-![Image](https://kike.pe/angular-lab/taskmaker/logo.png)
+![Image](https://kike.pe/angular-lab/taskmaker/logo.png){ width="317" height="133" style="display: block; margin: 0 auto" }
 
 # TaskMaker
 
