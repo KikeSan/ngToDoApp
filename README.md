@@ -4,7 +4,7 @@
 
 Se trata de un administrador de tareas, el clásico TODO App.
 Esta vez guarda la información en Mongo Atlas usando servicios en NodeJS.
-Los servicios se encuentran en otro [repositorio](https://kike.pe/react-lab/todoapp/)
+Los servicios se encuentran en otro [repositorio](https://github.com/KikeSan/serviceAPI)
 
 Login:
 
